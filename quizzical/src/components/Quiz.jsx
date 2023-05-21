@@ -2,18 +2,33 @@ import he from 'he'
 
 export default function Quiz(props) {
 
-    console.log(props.quiz)
-
     const questions = props.quiz.map((question, index) => {
         const decodedQuestion = he.decode(question.question);
         const decodedCorrectAnswer = he.decode(question.correct_answer);
         const decodedIncorrectAnswers = question.incorrect_answers.map(answer => he.decode(answer));
-        console.log(decodedIncorrectAnswers);
+        
+        const allAnswers = decodedIncorrectAnswers.concat(decodedCorrectAnswer);
+
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1))
+                let temp = array[i]
+                array[i] = array[j]
+                array[j] = temp
+            }
+            return array
+        }
+          
+        console.log(decodedCorrectAnswer)
+
         return (
-          <div key={index}>
-            <h2>{decodedQuestion}</h2>
-            <p>{decodedCorrectAnswer}</p>
-            <p>{decodedIncorrectAnswers}</p>
+          <div className="quiz-header" key={index}>
+            <h3>{decodedQuestion}</h3>
+            <div className='answer-list'>
+                {shuffle(allAnswers).map((answer, index) => {
+                    return <div className='answer-btn' key={index}>{answer}</div>
+                })}
+            </div>
           </div>
         );
       });
@@ -21,51 +36,7 @@ export default function Quiz(props) {
 
     return (
         <div className='quiz'>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
+            {questions}
             <button className='check-btn'>Check Answers</button>
         </div>
     )

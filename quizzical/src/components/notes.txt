@@ -48,3 +48,58 @@
         ]
     }
 ]
+
+
+
+         <div className='quiz-header'>
+                <h3 className='question'>How would you say hello in Spanish?</h3>
+                <div className='answer-list'>
+                    <div className='answer-btn'>adios</div>
+                    <div className='answer-btn'>hola</div>
+                    <div className='answer-btn'>hasta luego</div>
+                    <div className='answer-btn'>hasta manana</div>
+                </div>
+            </div>
+            <div className='quiz-header'>
+                <h3 className='question'>How would you say hello in Spanish?</h3>
+                <div className='answer-list'>
+                    <div className='answer-btn'>adios</div>
+                    <div className='answer-btn'>hola</div>
+                    <div className='answer-btn'>hasta luego</div>
+                    <div className='answer-btn'>hasta manana</div>
+                </div>
+            </div>
+            <div className='quiz-header'>
+                <h3 className='question'>How would you say hello in Spanish?</h3>
+                <div className='answer-list'>
+                    <div className='answer-btn'>adios</div>
+                    <div className='answer-btn'>hola</div>
+                    <div className='answer-btn'>hasta luego</div>
+                    <div className='answer-btn'>hasta manana</div>
+                </div>
+            </div>
+            <div className='quiz-header'>
+                <h3 className='question'>How would you say hello in Spanish?</h3>
+                <div className='answer-list'>
+                    <div className='answer-btn'>adios</div>
+                    <div className='answer-btn'>hola</div>
+                    <div className='answer-btn'>hasta luego</div>
+                    <div className='answer-btn'>hasta manana</div>
+                </div>
+            </div>
+
+
+
+ return (
+          <div className="quiz-header" key={index}>
+            <h3>{decodedQuestion}</h3>
+            <div className='answer-list'>
+            <div className='answer-btn'>{decodedCorrectAnswer}</div>
+            {decodedIncorrectAnswers.map((answer, index) => {
+                return <div className='answer-btn' key={index}>{answer}</div>
+                })
+            }
+            </div>
+          </div>
+        );
+      });
