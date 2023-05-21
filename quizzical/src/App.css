@@ -1,26 +1,24 @@
+body{
+  background-color: #282c34;
+  color: #F5F7FB;
+  position: relative;
+  font-size: 10.5 px;
+}
+
 #root{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   width: 100vw;
-  background-color: #282c34;
-  color: #F5F7FB;
-  position: relative;
-
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 80vw;
 }
 
 .Welcome {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .Welcome p, .Welcome h1 {
@@ -42,4 +40,35 @@ main {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.quiz{
+  display: flex;
+  flex-direction: column;
+  margin: 25px auto;
+}
+
+.quiz-header{
+  border-bottom: 1px solid #DBDEF0;
+}
+
+.question{
+  margin: 14.7px 0 13px
+}
+
+.answer-list{
+  display: flex;
+}
+
+.answer-btn{
+  margin: 0px 13px 15px;
+  border: 1px solid #F5F7FB;
+  border-radius: 7px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.check-btn{
+  background-color: #4D5B9E;
+  margin: 20px auto;
 }

@@ -1,0 +1,50 @@
+[
+    {
+        "category": "Science & Nature",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who developed the first successful polio vaccine in the 1950s?",
+        "correct_answer": "Jonas Salk",
+        "incorrect_answers": [
+            "John F. Enders",
+            "Thomas Weller",
+            "Frederick Robbins"
+        ]
+    },
+    {
+        "category": "Entertainment: Video Games",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In WarioWare: Smooth Moves, which one of these is NOT a Form?",
+        "correct_answer": "The Hotshot",
+        "incorrect_answers": [
+            "The Discard",
+            "The Elephant",
+            "The Mohawk"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of these Johns was murdered by gunshots outside the Dakota in New York in 1980?",
+        "correct_answer": "John Lennon",
+        "incorrect_answers": [
+            "Johnny Thunders",
+            "John Denver",
+            "John Cascella"
+        ]
+    },
+    {
+        "category": "Entertainment: Video Games",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In the video game DOTA 2, which of these is NOT a hero?",
+        "correct_answer": "Dragon Champion",
+        "incorrect_answers": [
+            "Dark Seer",
+            "Keeper of the Light",
+            "Mirana"
+        ]
+    }
+]
