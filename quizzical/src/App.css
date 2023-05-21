@@ -7,6 +7,8 @@
   width: 100vw;
   background-color: #282c34;
   color: #F5F7FB;
+  position: relative;
+
 }
 
 main {
@@ -28,4 +30,16 @@ main {
 .start-btn{
   background-color: #4D5B9E;
   margin-top: 30px;
+}
+
+.blob1{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.blob2{
+  position: absolute;
+  top: 0;
+  right: 0;
 }
