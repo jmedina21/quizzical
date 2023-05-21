@@ -19,8 +19,6 @@ export default function Quiz(props) {
             return array
         }
           
-        console.log(decodedCorrectAnswer)
-
         return (
           <div className="quiz-header" key={index}>
             <h3>{decodedQuestion}</h3>

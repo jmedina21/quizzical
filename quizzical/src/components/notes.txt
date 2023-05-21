@@ -1,105 +1,62 @@
 [
     {
-        "category": "Science & Nature",
+        "category": "Animals",
         "type": "multiple",
         "difficulty": "medium",
-        "question": "Who developed the first successful polio vaccine in the 1950s?",
-        "correct_answer": "Jonas Salk",
+        "question": "What type of animal is a natterjack?",
+        "correct_answer": "Toad",
         "incorrect_answers": [
-            "John F. Enders",
-            "Thomas Weller",
-            "Frederick Robbins"
+            "Bird",
+            "Fish",
+            "Insect"
+        ]
+    },
+    {
+        "category": "Geography",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "On a London Underground map, what colour is the Circle Line?",
+        "correct_answer": "Yellow",
+        "incorrect_answers": [
+            "Red",
+            "Blue",
+            "Green"
+        ]
+    },
+    {
+        "category": "History",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which of the following African countries was most successful in resisting colonization?",
+        "correct_answer": "Ethiopia",
+        "incorrect_answers": [
+            "C&ocirc;te d&rsquo;Ivoire",
+            "Congo",
+            "Namibia"
+        ]
+    },
+    {
+        "category": "Politics",
+        "type": "multiple",
+        "difficulty": "hard",
+        "question": "Which Native American tribe/nation requires at least one half blood quantum (equivalent to one parent) to be eligible for membership?",
+        "correct_answer": "Yomba Shoshone Tribe",
+        "incorrect_answers": [
+            "Standing Rock Sioux Tribe",
+            "Kiowa Tribe of Oklahoma",
+            "Pawnee Nation of Oklahoma"
         ]
     },
     {
         "category": "Entertainment: Video Games",
         "type": "multiple",
         "difficulty": "medium",
-        "question": "In WarioWare: Smooth Moves, which one of these is NOT a Form?",
-        "correct_answer": "The Hotshot",
+        "question": "In &quot;Overwatch&quot;, what is the name of Mercy&#039;s &quot;ultimate ability&quot;?",
+        "correct_answer": "Valkyrie",
         "incorrect_answers": [
-            "The Discard",
-            "The Elephant",
-            "The Mohawk"
-        ]
-    },
-    {
-        "category": "Entertainment: Music",
-        "type": "multiple",
-        "difficulty": "medium",
-        "question": "Which of these Johns was murdered by gunshots outside the Dakota in New York in 1980?",
-        "correct_answer": "John Lennon",
-        "incorrect_answers": [
-            "Johnny Thunders",
-            "John Denver",
-            "John Cascella"
-        ]
-    },
-    {
-        "category": "Entertainment: Video Games",
-        "type": "multiple",
-        "difficulty": "medium",
-        "question": "In the video game DOTA 2, which of these is NOT a hero?",
-        "correct_answer": "Dragon Champion",
-        "incorrect_answers": [
-            "Dark Seer",
-            "Keeper of the Light",
-            "Mirana"
+            "Earthshatter",
+            "Rocket Barrage",
+            "Molten Core"
         ]
     }
 ]
-
-
-
-         <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-            <div className='quiz-header'>
-                <h3 className='question'>How would you say hello in Spanish?</h3>
-                <div className='answer-list'>
-                    <div className='answer-btn'>adios</div>
-                    <div className='answer-btn'>hola</div>
-                    <div className='answer-btn'>hasta luego</div>
-                    <div className='answer-btn'>hasta manana</div>
-                </div>
-            </div>
-
-
-
- return (
-          <div className="quiz-header" key={index}>
-            <h3>{decodedQuestion}</h3>
-            <div className='answer-list'>
-            <div className='answer-btn'>{decodedCorrectAnswer}</div>
-            {decodedIncorrectAnswers.map((answer, index) => {
-                return <div className='answer-btn' key={index}>{answer}</div>
-                })
-            }
-            </div>
-          </div>
-        );
-      });
