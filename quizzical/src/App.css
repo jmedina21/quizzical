@@ -56,8 +56,13 @@ body{
   margin: 14.7px 0 13px
 }
 
+h4{
+  margin: 14px 0 13px;
+}
+
 .answer-list{
   display: flex;
+  font-size: 12px;
 }
 
 .answer-btn{

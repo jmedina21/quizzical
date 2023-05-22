@@ -16,7 +16,7 @@ export default function Quiz(props) {
           
         return (
           <div className="quiz-header" key={index}>
-            <h3>{question.question}</h3>
+            <h4>{question.question}</h4>
             <div className='answer-list'>
                 {shuffle(allAnswers).map((answer, index) => {
                     return <div className='answer-btn' key={index}>{answer}</div>
