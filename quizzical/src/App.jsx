@@ -23,11 +23,12 @@ export default function App() {
         const decodedIncorrectAnswers = question.incorrect_answers.map(answer => he.decode(answer));
 
         return {
-            id: nanoid(),
-            question: decodedQuestion,
-            correctAnswer: decodedCorrectAnswer,
-            incorrectAnswers: decodedIncorrectAnswers,
-        }
+              id: nanoid(),
+              question: decodedQuestion,
+              correctAnswer: decodedCorrectAnswer,
+              allAnswers: shuffle([...decodedIncorrectAnswers, decodedCorrectAnswer]),
+              selectedAnswer: "",
+            }
       })))
       .then(() => setLoading(false))
   }, [])
@@ -36,11 +37,36 @@ export default function App() {
     setQuizStarted(true)
   }
 
+  function selectAnswer(e, questionId, index) {
+    setQuizQuestions(prevQuiz => {
+      return prevQuiz.map(question => {
+        if (question.id === questionId) {
+          return {
+            ...question,
+            selectedAnswer: index
+          };
+        }
+        return question;
+      });
+    });
+  }
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1))
+        let temp = array[i]
+        array[i] = array[j]
+        array[j] = temp
+    }
+    return array
+}
+
   return (
     <main>
       <BlobBackground />
-      {loading && quizStarted? <Loader /> : null}
-      {!quizStarted ? <Welcome startQuiz={startQuiz}/> : <Quiz quiz={quizQuestions}/>}
+      {loading && quizStarted ? <Loader /> : null}
+      {!quizStarted ? <Welcome startQuiz={startQuiz}/> 
+        : <Quiz quiz={quizQuestions} selectAnswer={selectAnswer}/>}
     </main>
   )
 }

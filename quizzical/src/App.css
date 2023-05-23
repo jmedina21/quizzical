@@ -66,12 +66,21 @@ h4{
 }
 
 .answer-btn{
+  /* display: none; */
+}
+
+.answer-label{
   margin: 0px 13px 15px;
   border: 1px solid #F5F7FB;
   border-radius: 7px;
   padding: 5px 10px;
   cursor: pointer;
+  display: inline-block;
 }
+
+/* .selectedStyle{
+  background-color: #4D5B9E;
+} */
 
 .check-btn{
   background-color: #4D5B9E;
