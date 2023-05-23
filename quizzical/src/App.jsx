@@ -49,6 +49,17 @@ export default function App() {
         return question;
       });
     });
+    console.log(quizQuestions)
+  }
+
+  function checkAnswers() {
+    for(let i = 0; i < quizQuestions.length; i++) {
+      if(quizQuestions[i].allAnswers[quizQuestions[i].selectedAnswer] === quizQuestions[i].correctAnswer) {
+        console.log(`Question ${i + 1} is correct!`)
+      }else{
+        console.log(`Question ${i + 1} is wrong!`)
+      }
+    }
   }
 
   function shuffle(array) {
@@ -66,7 +77,11 @@ export default function App() {
       <BlobBackground />
       {loading && quizStarted ? <Loader /> : null}
       {!quizStarted ? <Welcome startQuiz={startQuiz}/> 
-        : <Quiz quiz={quizQuestions} selectAnswer={selectAnswer}/>}
+        : <Quiz 
+            quiz={quizQuestions} 
+            selectAnswer={selectAnswer}
+            checkAnswers={checkAnswers}
+            />}
     </main>
   )
 }

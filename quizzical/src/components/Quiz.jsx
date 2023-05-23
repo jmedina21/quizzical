@@ -33,7 +33,7 @@ export default function Quiz(props) {
     return (
         <div className="quiz">
             {quiz}
-            <button className="check-btn">Check Answers</button>
+            <button className="check-btn" onClick={()=>props.checkAnswers()} >Check Answers</button>
         </div>
     )
 }

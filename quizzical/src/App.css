@@ -66,7 +66,7 @@ h4{
 }
 
 .answer-btn{
-  /* display: none; */
+  display: none;
 }
 
 .answer-label{
@@ -77,10 +77,6 @@ h4{
   cursor: pointer;
   display: inline-block;
 }
-
-/* .selectedStyle{
-  background-color: #4D5B9E;
-} */
 
 .check-btn{
   background-color: #4D5B9E;
