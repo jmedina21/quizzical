@@ -1,4 +1,3 @@
-
 export default function Quiz(props) {
 
     const selectedStyle = {
@@ -15,7 +14,7 @@ export default function Quiz(props) {
                     id={index + question.id} onChange={(e) => props.selectAnswer(e, question.id, index)}
                     />
                     <label htmlFor={index + question.id} className="answer-label"
-                        style={props.selectedAnswer === index ? selectedStyle : null}
+                        style={question.selectedAnswer === index ? selectedStyle : null}
                     >{answer}</label>
                 </div>
             )
@@ -34,7 +33,7 @@ export default function Quiz(props) {
     return (
         <div className="quiz">
             {quiz}
-            <button className="check-btn">Submit</button>
+            <button className="check-btn">Check Answers</button>
         </div>
     )
 }

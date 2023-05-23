@@ -10,8 +10,8 @@ import Quiz from './components/Quiz'
 export default function App() {
 
   const [quizStarted, setQuizStarted] = useState(false)
-  const [quizQuestions, setQuizQuestions] = useState([])
   const [loading, setLoading] = useState(true)
+  const [quizQuestions, setQuizQuestions] = useState([])
 
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
