@@ -33,10 +33,9 @@ export default function Quiz(props) {
                     />
                     <label 
                         htmlFor={index + question.id} 
-                        className="answer-label"
-                        style={
-                            props.answersChecked && question.selectedAnswer === index ? checkedStyle : selectedStyle
-                        }
+                        className={`answer-label ${props.answersChecked && question.correctAnswer === answer ? "correct-answer" : ""}`}
+                        style={props.answersChecked && question.selectedAnswer === index ?
+                             checkedStyle : selectedStyle }
                     >{answer}</label>
                 </div>
             )

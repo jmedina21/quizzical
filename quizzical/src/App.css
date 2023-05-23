@@ -82,13 +82,14 @@ h4{
   text-align: center;
 }
 
-.test{
-  background-color: #60c476
-}
-
 .check-btn{
   background-color: #4D5B9E;
   margin: 20px auto;
+}
+
+.correct-answer{
+  background-color: #60c476;
+  color: #000
 }
 
 /* loader */
