@@ -11,7 +11,6 @@ export default function Quiz(props) {
     }
 
     const quiz = props.quiz.map((question, index) => {
-        console.log(question.correctAnswer)
         const checkedStyle = props.results[index] === true ? 
         {backgroundColor: "#60c476", color: "#000"} : 
         {backgroundColor: "#b43b3b", opacity: "0.7"}

@@ -14,8 +14,9 @@ export default function App() {
   const [quizQuestions, setQuizQuestions] = useState([])
   const [answersChecked, setAnswersChecked] = useState(false)
   const [results, setResults] = useState([])
+  const [timesPlayed, setTimesPlayed] = useState(0)
 
-  useEffect(() => {
+  useEffect(function getQuestions() {
     fetch("https://opentdb.com/api.php?amount=5&type=multiple")
       .then(response => response.json())
       .then(data => setQuizQuestions(data.results.map(question => {
@@ -37,10 +38,18 @@ export default function App() {
         for(let i = 0; i < 5; i++){
         }
       })
-  }, [])
+  }, [timesPlayed])
 
   function startQuiz() {
     setQuizStarted(true)
+  }
+
+  function restartQuiz(){
+    setQuizQuestions([])
+    setResults([])
+    setAnswersChecked(false)
+    setLoading(true)
+    setTimesPlayed(timesPlayed + 1)
   }
 
   function selectAnswer(e, questionId, index) {
@@ -64,14 +73,13 @@ export default function App() {
       if (quizQuestions[i].allAnswers[quizQuestions[i].selectedAnswer] === quizQuestions[i].correctAnswer) {
         newResults.push(true)
       } else {
-        console.log("incorrect")
         newResults.push(false)
       }
     }
     setResults(newResults)
-    // if (answersChecked) {
-    //   setAnswersChecked(false)
-    // }
+    if (answersChecked) {
+      restartQuiz()
+    }
   }
 
   function shuffle(array) {
