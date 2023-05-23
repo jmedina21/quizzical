@@ -78,6 +78,10 @@ h4{
   display: inline-block;
 }
 
+.results{
+  text-align: center;
+}
+
 .check-btn{
   background-color: #4D5B9E;
   margin: 20px auto;
