@@ -1,17 +1,5 @@
 export default function Quiz(props) {
 
-    const selectedStyle = {
-        backgroundColor: "#4D5B9E"
-      }
-
-    const correctStyle = {
-        backgroundColor: "#94D7A2"
-    }
-
-    const incorrectStyle = {
-        backgroundColor: "#F8BCBC"
-    }
-
     function resultCalc() {
         let results = 0
         for (let i = 0; i < props.results.length; i++) {
@@ -22,18 +10,34 @@ export default function Quiz(props) {
         return results
     }
 
-    const quiz = props.quiz.map(question => {
+    const quiz = props.quiz.map((question, index) => {
+        console.log(question.correctAnswer)
+        const checkedStyle = props.results[index] === true ? 
+        {backgroundColor: "#60c476", color: "#000"} : 
+        {backgroundColor: "#b43b3b", opacity: "0.7"}
 
-        const answers = question.allAnswers.map((answer, index) => {
+        const answers = question.allAnswers.map((answer, index) => {            
+            //label styles
+            const selectedStyle = question.selectedAnswer === index ? {backgroundColor: "#4D5B9E"} : null
+
             return (
                 <div>
-                    <input type="radio" name={question.id} 
-                    value={answer} key={index + question.id} className="answer-btn"
-                    id={index + question.id} onChange={(e) => props.selectAnswer(e, question.id, index)}
-                    disabled={props.answersChecked ? true : false}
+                    <input 
+                        type="radio" 
+                        name={question.id}
+                        value={answer}
+                        key={index + question.id}
+                        className="answer-btn"
+                        id={index + question.id} 
+                        onChange={(e) => props.selectAnswer(e, question.id, index)}
+                        disabled={props.answersChecked ? true : false}
                     />
-                    <label htmlFor={index + question.id} className="answer-label"
-                        style={question.selectedAnswer === index ? selectedStyle : null}
+                    <label 
+                        htmlFor={index + question.id} 
+                        className="answer-label"
+                        style={
+                            props.answersChecked && question.selectedAnswer === index ? checkedStyle : selectedStyle
+                        }
                     >{answer}</label>
                 </div>
             )
@@ -54,7 +58,10 @@ export default function Quiz(props) {
             {quiz}
                 {props.answersChecked ? <h3 className="results">
                     {"You scored " + resultCalc() + "/" + props.results.length + " correct answers"}</h3> : null}
-                <button className="check-btn" onClick={()=>props.checkAnswers()} >Check Answers</button>
+                <button 
+                    className="check-btn" 
+                    onClick={()=>props.checkAnswers()} >
+                        {!props.answersChecked ? "Check Answers" : "Play Again"}</button>
         </div>
     )
 }

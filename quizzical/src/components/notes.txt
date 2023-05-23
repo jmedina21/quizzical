@@ -214,3 +214,6 @@ const selectedStyle = {
         "selectedAnswer": 1
     }
 ]
+
+
+question.selectedAnswer === index ? selectedStyle : null

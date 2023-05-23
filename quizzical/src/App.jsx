@@ -33,6 +33,10 @@ export default function App() {
             }
       })))
       .then(() => setLoading(false))
+      .then(() => {
+        for(let i = 0; i < 5; i++){
+        }
+      })
   }, [])
 
   function startQuiz() {
@@ -59,13 +63,15 @@ export default function App() {
     for (let i = 0; i < quizQuestions.length; i++) {
       if (quizQuestions[i].allAnswers[quizQuestions[i].selectedAnswer] === quizQuestions[i].correctAnswer) {
         newResults.push(true)
-        console.log(`Question ${i + 1} is correct!`)
       } else {
+        console.log("incorrect")
         newResults.push(false)
-        console.log(`Question ${i + 1} is wrong!`)
       }
     }
     setResults(newResults)
+    // if (answersChecked) {
+    //   setAnswersChecked(false)
+    // }
   }
 
   function shuffle(array) {
