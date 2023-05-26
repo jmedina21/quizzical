@@ -35,8 +35,6 @@ export default function App() {
       })))
       .then(() => setLoading(false))
       .then(() => {
-        for(let i = 0; i < 5; i++){
-        }
       })
   }, [timesPlayed])
 
@@ -103,6 +101,7 @@ export default function App() {
             checkAnswers={checkAnswers}
             answersChecked={answersChecked}
             results={results}
+            loading={loading}
             />}
     </main>
   )

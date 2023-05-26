@@ -22,10 +22,10 @@ export default function Quiz(props) {
             return (
                 <div>
                     <input 
+                        key={index + question.id}
                         type="radio" 
                         name={question.id}
                         value={answer}
-                        key={index + question.id}
                         className="answer-btn"
                         id={index + question.id} 
                         onChange={(e) => props.selectAnswer(e, question.id, index)}
@@ -42,7 +42,8 @@ export default function Quiz(props) {
         })
 
        return (        
-            <div className="quiz-header">
+            <div className="quiz-header"
+                key={props.quiz.id}            >
                 <h4>{question.question}</h4>
                 <div className="answer-list">
                     {answers}
@@ -56,10 +57,11 @@ export default function Quiz(props) {
             {quiz}
                 {props.answersChecked ? <h3 className="results">
                     {"You scored " + resultCalc() + "/" + props.results.length + " correct answers"}</h3> : null}
-                <button 
+                {!props.loading ? <button 
                     className="check-btn" 
                     onClick={()=>props.checkAnswers()} >
                         {!props.answersChecked ? "Check Answers" : "Play Again"}</button>
+                        : null}
         </div>
     )
 }
